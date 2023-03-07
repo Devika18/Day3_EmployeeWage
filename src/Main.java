@@ -6,21 +6,24 @@ public class Main {
 
         Random random = new Random();
         System.out.println("Random value is: ");
+        int w = 20;
+        int fullTime = 10;
+        int partTime = 8;
         int salary;
-        int w = 20;                                     //wage per hour is 20
-        int h = 8;                                      //full day hour is 8
-
         int isPresent = random.nextInt(10);
         System.out.println(isPresent);
 
 
-        if(isPresent>=5) {
-            salary = w*h;
-            System.out.println("Employee is Present and Salary of Employee is: " +salary);
+        //Checking condition for Part time Employee
+        if(isPresent>=3) {
+            salary = w*partTime;
+            System.out.print("Employee is present for PartTime");
+            System.out.println();
+            System.out.print("Salary of Employee is: "+ salary);
         }
         else {
             salary = 0;
-            System.out.println("Employee is Absent and salary of employee is: "+ salary);
+            System.out.print("Employee is Absent and salary is: "+ salary);
         }
     }
 }
