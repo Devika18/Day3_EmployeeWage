@@ -4,15 +4,23 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Program");
 
-        System.out.println("Random value is: ");
         Random random = new Random();
-        int r = random.nextInt(5);
-        System.out.println(r);
-        if(r>3) {
-            System.out.println("Employee is Present");
+        System.out.println("Random value is: ");
+        int salary;
+        int w = 20;                                     //wage per hour is 20
+        int h = 8;                                      //full day hour is 8
+
+        int isPresent = random.nextInt(10);
+        System.out.println(isPresent);
+
+
+        if(isPresent>=5) {
+            salary = w*h;
+            System.out.println("Employee is Present and Salary of Employee is: " +salary);
         }
         else {
-            System.out.println("Employee is Absent");
+            salary = 0;
+            System.out.println("Employee is Absent and salary of employee is: "+ salary);
         }
     }
 }
