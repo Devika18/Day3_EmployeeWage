@@ -1,26 +1,47 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Program");
-
-        Random random = new Random();
+        System.out.println("Enter working hours: ");
+        Scanner sc = new Scanner(System.in);
+        int wH =sc.nextInt();
         System.out.println("Random value is: ");
-        int day = 20;
-        int w = 20;
-        int fullTime = 10;
-        int salary, totalSalary = 0;
-        int isPresent = random.nextInt(5);
-        System.out.println(isPresent);
+        Random r1 = new Random();
+        int random = r1.nextInt(10);
+        System.out.println(random);
 
-        if (isPresent>2) {
-            salary = w * fullTime * day;
-            totalSalary = totalSalary + salary;
-            System.out.println("Monthly salary of the employee is: " + totalSalary);
-        } else {
-            salary = 0;
-            System.out.println("Employee is absent and the salary is: " + salary);
+        //initializing and declaring the variables
+        int salary;
+        int partTime = 4, fullTime = 8;
+        int totalSalary = 0;
+
+
+        //Checking condition if employee is present for full time
+        if(random>7) {
+            for(int day=1;day<=20;day++) {
+                if (wH <= 100) {
+                    salary = fullTime * day * wH;
+                    totalSalary = totalSalary + salary;
+                    System.out.println("Salary of FullTime Employee is: " + totalSalary);
+                }
+            }
+        }
+
+        //Checking condition if employee is present for part time
+        else if(random>=3) {
+            for (int day=1; day<=20; day++) {
+                if (wH <= 100) {
+                    salary = partTime * day * wH;
+                    totalSalary = totalSalary + salary;
+                    System.out.println("Salary of PartTime Employee is: " + totalSalary);
+                }
+            }
+        }
+        else {
+            System.out.println("Employee is Absent");
         }
     }
 }
