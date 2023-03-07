@@ -1,29 +1,28 @@
 import java.util.Random;
 
 public class Main {
+
+    public static final int partTime = 2;
+    public static final int fullTime = 1;
+    public static final int h = 20;
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Program");
 
         Random random = new Random();
-        System.out.println("Random value is: ");
-        int w = 20;
-        int fullTime = 10;
-        int partTime = 8;
-        int salary;
-        int isPresent = random.nextInt(10);
-        System.out.println(isPresent);
-
-
-        //Checking condition for Part time Employee
-        if(isPresent>=3) {
-            salary = w*partTime;
-            System.out.print("Employee is present for PartTime");
-            System.out.println();
-            System.out.print("Salary of Employee is: "+ salary);
+        int empHrs, empWage;
+        int randomCheck = random.nextInt(4);
+        System.out.println("Random value is: "+ randomCheck);
+        switch (randomCheck) {
+            case fullTime:
+                empHrs = 8;
+                break;
+            case partTime:
+                empHrs = 4;
+                break;
+            default:
+                empHrs = 0;
         }
-        else {
-            salary = 0;
-            System.out.print("Employee is Absent and salary is: "+ salary);
-        }
+        empWage = (empHrs * h);
+        System.out.println("Employee salary is:"+empWage);
     }
 }
